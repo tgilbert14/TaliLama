@@ -150,7 +150,7 @@ server <- function(input, output, session) {
       setView( lat=coord$meanLat[1], lng=coord$meanLon[1], zoom=11) %>%
       addProviderTiles(view_pick) %>%
       addCircleMarkers(~Longitude, ~Latitude,
-                       fillColor =~pal(new_geo$scientificName), opacity = .8, fillOpacity = .8, radius=~count/8,
+                       fillColor =~pal(new_geo$scientificName), opacity = .8, fillOpacity = .8, radius=~count/10,
                        popup = paste("Total Captures at site (2016): ",y2016$Totalcount,"<br/>","Total Captures at site (2017): ",y2017$Totalcount,"<br/>",'Total Captures at site (2018): ',y2018$Totalcount,"<br/>",'Total Captures at site (2019): ',y2019$Totalcount,"<br/>",'Total Captures at site (2020): ',y2020$Totalcount, sep="") %>%
                          lapply(htmltools::HTML),
                        stroke = T, weight = 1,  color = 'white', 
@@ -231,7 +231,7 @@ server <- function(input, output, session) {
     a.plot<- ggplot(data.sum, aes(year_month, count, group = (scientificName), fill = (scientificName)))+
       geom_point(aes(color=scientificName), size=.7)+
       geom_line(aes(color=scientificName)) +
-      facet_wrap(facets = vars(plotID), scales = 'free')+
+      facet_wrap(facets = vars(plotID), scales = 'free_y')+
       scale_fill_manual(values = mycolors) +
       ggtitle(paste0(data.raw$siteID[1]," Species Per Plot by Month"))+
       #scale_fill_gradientn(colours=rev(rainbow(100, start=0, end=0.19)))+
