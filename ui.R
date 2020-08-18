@@ -6,54 +6,29 @@
 #Must enter domain # and tagID in correct format, leading w/ domain followed by tag
 #identification number [D##.tagID#] {Ex: 'club foot' at JORN - R2861}
 
-#install.packages('neonUtilities')  ##Loading Libraries##
-#load.pkg('dplyr')
-#install.packages('tidyverse')
-#install.packages('readr')
-#install.packages('tidyr')
-#install.packages('plotly')
-#install.packages('shiny')
-#install.packages('shinycssloaders')
-#install.packages('reshape')
-#install.packages('RColorBrewer')
-#install.packages('grid')
-#update.packages(ask = FALSE, checkBuilt = TRUE)
-#devtools::check()
-
-#setwd('C:/Users/tgilbert/Documents/GitHub/fs-learn-R/2020/TimGilbert/MAM_history')
-
-#a<- .libPaths()
-#setwd(a)
-#setwd('C:\Users\tgilbert\Documents\R\win-library\3.6')
-
-
-library(neonUtilities)  ##Loading Libraries##
-library(dplyr)
-library(tidyverse)
-library(readr)
-library(tidyr)
-library(shiny)
-library(shinycssloaders)
-library(reshape)
-library(RColorBrewer)
-library(grid)
-library(leaflet)
-library(ggmap)
-library(sf)
-library(mapview)
-library(plotly)
-#(devtools)
-#install.packages('phantomjs.exe')
-#install_github("wch/webshot") # first install phantomjs.exe in your directory
-library(htmlwidgets)
-library(webshot)
-
-
-##debug_mode=0
-
-#getwd()
-#runApp()
-#shiny::runApp(system.file('appdir', package='MamHistory'))
+load.pkg <- function(p) {  #load packages with require(), install any that are not installed
+  if (!is.element(p, installed.packages()[,1]))
+    install.packages(p, dep = TRUE)
+  suppressMessages(require(p, character.only = TRUE))
+}
+load.pkg('neonUtilities')  ##Loading Libraries##
+load.pkg('dplyr')
+load.pkg('tidyverse')
+load.pkg('readr')
+load.pkg('tidyr')
+load.pkg('plotly')
+load.pkg('shiny')
+load.pkg('shinycssloaders')
+load.pkg(reshape)
+load.pkg(RColorBrewer)
+load.pkg(grid)
+load.pkg(leaflet)
+load.pkg(ggmap)
+load.pkg(sf)
+load.pkg(mapview)
+load.pkg(plotly)
+load.pkg(htmlwidgets)
+load.pkg(webshot)
 
 #---user interface--------------------------------------------------  
 
