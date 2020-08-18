@@ -8,7 +8,7 @@ server <- function(input, output, session) {
       return(NULL)
     
     #Downloading NEON portal data since 2016 to present w/ dpID
-    raw <- loadByProduct(dpID = "DP1.10072.001", site = site, startdate = '2016-01', package = 'basic', check.size = 'F' )
+    raw <- loadByProduct(dpID = "DP1.10072.001", site = site, startdate = '2017-01', package = 'basic', check.size = 'F' )
     data.raw <- as_tibble(raw$mam_pertrapnight)    #Getting raw data
   })
   
