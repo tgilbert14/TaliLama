@@ -50,7 +50,7 @@ ui <- fluidPage(
       #  downloadButton('map_down')
     #  ),
       #type in tagID looking for and will save as variable
-      textInput("SelectID", "Type in tag of individual species:", value= ""),
+      textInput("SelectID", "Type in tag of individual species:", value= "", placeholder = 'R2094'),
       
       
       submitButton("Process Tag", icon('tag'), width = '200px'),
