@@ -150,7 +150,7 @@ server <- function(input, output, session) {
       setView( lat=coord$meanLat[1], lng=coord$meanLon[1], zoom=11) %>%
       addProviderTiles(view_pick) %>%
       addCircleMarkers(~Longitude, ~Latitude,
-                       fillColor =~pal(new_geo$scientificName), opacity = .8, fillOpacity = .8, radius=~count/15,
+                       fillColor =~pal(new_geo$scientificName), opacity = .8, fillOpacity = .8, radius=~count/8,
                        popup = paste("Total Captures at site (2016): ",y2016$Totalcount,"<br/>","Total Captures at site (2017): ",y2017$Totalcount,"<br/>",'Total Captures at site (2018): ',y2018$Totalcount,"<br/>",'Total Captures at site (2019): ',y2019$Totalcount,"<br/>",'Total Captures at site (2020): ',y2020$Totalcount, sep="") %>%
                          lapply(htmltools::HTML),
                        stroke = T, weight = 1,  color = 'white', 
