@@ -5,12 +5,12 @@
 #If MAM history and plot has no info = could not find that tagID at selected site on NEON database
 #Must enter domain # and tagID in correct format, leading w/ domain followed by tag
 #identification number [D##.tagID#] {Ex: 'club foot' at JORN - R2861}
-
 load.pkg <- function(p) {  #load packages with require(), install any that are not installed
   if (!is.element(p, installed.packages()[,1]))
     install.packages(p, dep = TRUE)
   suppressMessages(require(p, character.only = TRUE))
 }
+
 load.pkg('neonUtilities')  ##Loading Libraries##
 load.pkg('dplyr')
 load.pkg('tidyverse')
